@@ -23,6 +23,8 @@ public class MyClassLoader extends ClassLoader{
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         byte[] data = getBytes("Test.class");
         Class<?> clazz = this.defineClass(name, data, 0, data.length);
+        // defineClass方法的作用
+        // Converts an array of bytes into an instance of class <tt>Class</tt>.
         return clazz;
     }
 
@@ -66,6 +68,9 @@ public class MyClassLoader extends ClassLoader{
         return buffer;
     }
 
+    /*
+    * 测试我们的自定义ClassLoader
+    * */
     public static void main(String[] args) {
 
         System.out.println(ClassLoader.getSystemClassLoader());

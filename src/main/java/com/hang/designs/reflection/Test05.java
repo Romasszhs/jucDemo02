@@ -28,7 +28,7 @@ public class Test05 {
 
         long startTime = System.currentTimeMillis();
 
-        Class c = Class.forName("com.hang.reflection.User");
+        Class c = Class.forName("com.hang.designs.reflection.User");
         Method getName = c.getMethod("getName");
 
 
@@ -47,7 +47,7 @@ public class Test05 {
 
         long startTime = System.currentTimeMillis();
 
-        Class c = Class.forName("com.hang.reflection.User");
+        Class c = Class.forName("com.hang.designs.reflection.User");
         Method getName = c.getMethod("getName");
         getName.setAccessible(true);
 

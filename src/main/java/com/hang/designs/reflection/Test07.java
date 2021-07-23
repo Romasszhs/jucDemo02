@@ -44,9 +44,12 @@ public class Test07 {
 
         // 读取成员方法参数的注解  并解析注解属性内容
         System.out.println("----------------------------");
+        System.out.println("读取成员方法参数的注解  并解析注解属性内容");
         Parameter[] parameters = method.getParameters();
         Params annotation3 = parameters[0].getAnnotation(Params.class);
         System.out.println(annotation3.value());
+        Parameter parameter = parameters[0];
+        System.out.println(parameter.getName());
 
         Annotation[][] parameterAnnotations = method.getParameterAnnotations();
         for (Annotation[] parameterAnnotation : parameterAnnotations) {

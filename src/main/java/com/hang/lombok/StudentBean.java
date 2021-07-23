@@ -2,6 +2,9 @@ package com.hang.lombok;
 
 import lombok.*;
 import lombok.experimental.Accessors;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * @author: hangshuo
@@ -12,7 +15,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @Getter
 @Setter
-@RequiredArgsConstructor(staticName = "of")
+@RequiredArgsConstructor(staticName = "of",onConstructor = @__(@Autowired)) // staticName作为外部调用private构造器的方法
 @Builder
 @ToString
 public class StudentBean {
