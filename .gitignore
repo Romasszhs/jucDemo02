@@ -1,3 +1,7 @@
 ## 测试提交到本地库再进行忽略的操作.txt
 /测试add功能.txt
 /测试提交到本地库再进行忽略的操作.txt
+.idea
+*.iml
+target
+*.class
