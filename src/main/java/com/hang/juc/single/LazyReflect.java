@@ -59,25 +59,28 @@ public class LazyReflect {
 
     // 单线程下可以  只有一个对象被创建
     // 多线程并发下，由于存在内存指令重排导致不安全，导致单例被破坏
-    //  通过加锁可以避免多个线程同时操作 对象锁
+    //  通过加锁可以避免多个线程同时操作 类锁的方式
     //  使用volatile关键子可以避免指令重排
     public static void main(String[] args) throws Exception {
-        //LazyReflect ins = LazyReflect.getInstance();
-        //LazyReflect ins2 = LazyReflect.getInstance();
-        //System.out.println(ins==ins2);
+        LazyReflect ins = LazyReflect.getInstance();
+        LazyReflect ins2 = LazyReflect.getInstance();
+        System.out.println(ins==ins2);
         Constructor<LazyReflect> declaredConstructor = LazyReflect.class.getDeclaredConstructor(null);
         declaredConstructor.setAccessible(true);
         LazyReflect ins3 = declaredConstructor.newInstance();
         LazyReflect ins4 = declaredConstructor.newInstance();
-        //System.out.println(ins==ins3);
+        System.out.println(ins==ins3);
         //System.out.println(ins);
         //System.out.println(ins2);
         System.out.println(ins3);
         System.out.println(ins4);
-        // 1.   如果没有在构造器中对反射创建单例对象进行限制就会破坏单例
-        // 2.   如果在构造器中对反射创建对象进行了限制，还可以直接使用两个反射来创建两个对象，破坏单例
-        // 3.   避免直接通过反射的手段创建两个对象，可以在类中添加一个成员变量作为标志位，在构造方法中进行判断。
-        // 4.   在第一个通过反射创建对象后，还是可以使用反射来修改标志位，进而通过反射再创建多一个对象。
+        /**
+         * 第一种情况
+         *      如果没有在构造器中对反射创建单例对象进行限制就会破坏单例 一个是使用静态方法创建的单例对象，另一个是使用反射获取构造器的方式获取对象
+         *      但是即使在构造器中对反射创建对象进行了限制（加类锁进行类变量的null的判断），还可以直接使用反射获取构造器来创建两个对象，破坏单例
+         * 第二种情况   避免直接通过反射的手段创建两个对象，可以在类中添加一个成员变量作为标志位，在构造方法中进行判断。
+         * 第三种情况   但是在第一个通过反射创建对象后，还是可以使用反射来修改标志位，进而通过反射再创建多一个对象。
+         * */
 
     }
 

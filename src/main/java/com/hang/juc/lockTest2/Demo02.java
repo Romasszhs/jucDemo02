@@ -15,13 +15,13 @@ public class    Demo02 {
 
         new Thread(()->{
             for (int i = 0; i < 10; i++) {
-                data.decrement();
+                data.increment();
             }
         },"线程B").start();
 
         new Thread(()->{
             for (int i = 0; i < 10; i++) {
-                data.decrement();
+                data.increment();
             }
         },"线程C").start();
 
@@ -42,7 +42,7 @@ class Data2{
     public  void increment()  {
         lock.lock();
         try {
-            while (num>=1){
+            while (num>=2){
                 condition.await();
             }
             num++;

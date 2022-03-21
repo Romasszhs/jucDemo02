@@ -21,7 +21,7 @@ public class Video implements Cloneable {
         //将这个对象的属性也进行克隆
         v.createTime = (Date) this.createTime.clone();
 
-        return obj;
+        return v;
     }
 
     public Video(String name, Date createTime) {

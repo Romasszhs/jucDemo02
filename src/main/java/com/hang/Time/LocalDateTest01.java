@@ -31,16 +31,16 @@ public class LocalDateTest01 {
         System.out.println("月: " + month +", 日: " + day +", 秒: " + seconds);
 
         LocalDateTime date2 = currentTime.withMonth(1);
-        System.out.println(date2);
+        System.out.println("date2: \t"+date2);
 
         LocalDate date3 = LocalDate.of(2018, Month.JANUARY, 1);
-        System.out.println(date3);
+        System.out.println("date3: \t"+date3);
 
         LocalTime date4 = LocalTime.of(16, 59, 59);
-        System.out.println(date4);
+        System.out.println("date4: \t"+date4);
 
         // 解析字符串
         LocalTime date5 = LocalTime.parse("20:15:30");
-        System.out.println("date5: " + date5);
+        System.out.println("date5: \t" + date5);
     }
 }

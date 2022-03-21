@@ -18,7 +18,7 @@ public class FibonacciTest2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(fibo(30, 1, 1));
+        System.out.println(fibo(4, 1, 1));
 //        try (Scanner scanner = new Scanner(System.in)){
 //
 //        }

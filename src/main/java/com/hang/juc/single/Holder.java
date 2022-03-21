@@ -21,7 +21,7 @@ public class Holder {
 
         new Thread(()->{
             Holder ins1 = Holder.getInstance();
-            System.out.println(ins1);
+            System.out.println(Thread.currentThread().getName()+ins1);
         },"线程A").start();
 
         /*
@@ -31,10 +31,10 @@ public class Holder {
         },"线程B").start();
         */
 
-        Class<Holder> aclass = Holder.class;
-        Constructor<Holder> declaredConstructor = aclass.getDeclaredConstructor(null);
-        Holder holder = declaredConstructor.newInstance();
-        System.out.println("通过反射创建的对象："+holder);
+//        Class<Holder> aclass = Holder.class;
+//        Constructor<Holder> declaredConstructor = aclass.getDeclaredConstructor(null);
+//        Holder holder = declaredConstructor.newInstance();
+//        System.out.println("通过反射创建的对象："+holder);
         //单例会被反射破坏
 
     }

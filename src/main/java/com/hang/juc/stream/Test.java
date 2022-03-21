@@ -3,6 +3,8 @@ package com.hang.juc.stream;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Test {
     public static void main(String[] args) {
@@ -30,6 +32,9 @@ public class Test {
                 .map((u)->{ return  u.getName().toUpperCase();}).sorted( (user1,user2)->{ return user1.compareTo(user2);} )
                 //.limit(1)
                 .forEach(System.out::println);
+
+
+        Stream<User> stream = list.stream();
 
     }
 }

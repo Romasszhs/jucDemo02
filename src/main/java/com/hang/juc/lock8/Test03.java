@@ -13,8 +13,9 @@ public class Test03 {
         Phone3 phone2 = new Phone3();
 
         new Thread(()->{
-            //phone.sendEmail();
-            phone1.sendEmail();
+//            phone.sendEmail();
+//            phone1.sendEmail();
+            Phone3.sendEmail();
         },"线程A").start();
 
         try {
@@ -24,8 +25,9 @@ public class Test03 {
         }
 
         new Thread(()->{
-            //phone.sendMsg();
-            phone2.sendMsg();
+//            phone.sendMsg();
+//            phone2.sendMsg();
+            Phone3.sendMsg();
         },"线程B").start();
     }
 }

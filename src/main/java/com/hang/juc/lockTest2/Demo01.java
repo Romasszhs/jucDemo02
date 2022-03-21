@@ -30,17 +30,17 @@ public class Demo01 {
 //            }
 //        },"线程B").start();
 //
-//        new Thread(()->{
-//            for (int i = 0; i < 10; i++) {
-//                try {
-//
-//                    data.decrement();
-//                    //Thread.sleep(100);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        },"线程C").start();
+        new Thread(()->{
+            for (int i = 0; i < 10; i++) {
+                try {
+
+                    data.decrement();
+                    //Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        },"线程C").start();
 
         new Thread(()->{
             for (int i = 0; i < 10; i++) {
@@ -74,13 +74,15 @@ class Data{
 //            this.wait();
 //        }
         while (num>=1){
-            wait();
+            wait(); // 等于 this.wait()
         }
         num++;
 
         System.out.println(Thread.currentThread().getName()+"\t "+num);
 
-        this.notifyAll();
+        //this.notify(); // 仅唤醒一个处于等待状态的线程
+        this.notifyAll(); // 唤醒同一个对象上所有调用wait方法的线程，处于等待状态的线程
+
     }
 
     public synchronized void decrement() throws InterruptedException {
@@ -93,6 +95,6 @@ class Data{
 
         num--;
         System.out.println(Thread.currentThread().getName()+"\t "+num);
-        this.notifyAll();
+        this.notify();
     }
 }

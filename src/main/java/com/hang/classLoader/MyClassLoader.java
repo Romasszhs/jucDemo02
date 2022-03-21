@@ -91,7 +91,8 @@ public class MyClassLoader extends ClassLoader{
             * */
             Class<?> clazz1 = loader1.loadClass("com.hang.classLoader.Test");
             System.out.println(clazz1.getClassLoader());//com.hang.classLoader.MyClassLoader@2cfb4a64
-
+//            sun.misc.Launcher$AppClassLoader@18b4aac2
+//            com.hang.classLoader.MyClassLoader@723279cf
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
