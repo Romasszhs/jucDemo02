@@ -25,7 +25,7 @@ public class offer06_reverselist {
 
         System.out.println(reverse2(head1));
     }
-
+    // 方式一
     public static ListNode reverse(ListNode root){
         if (root.getNext()==null){
             return root;
@@ -36,7 +36,7 @@ public class offer06_reverselist {
         root.next = null;
         return newList;
     }
-
+    // 方式二
     public static ListNode reverse2(ListNode head){
         ListNode prev = null;
         ListNode curr = head;

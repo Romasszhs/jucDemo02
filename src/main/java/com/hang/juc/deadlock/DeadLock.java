@@ -14,7 +14,6 @@ public class DeadLock {
 
         LockRunner lockRunner = new LockRunner();
 
-
         lockRunner.lock(a,b);
 
         new Thread(()->{
@@ -23,7 +22,8 @@ public class DeadLock {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }).start();
+        },"thread-101").start();
+
     }
 
     static class LockRunner{
