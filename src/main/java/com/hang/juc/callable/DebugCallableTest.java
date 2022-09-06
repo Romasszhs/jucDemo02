@@ -15,7 +15,8 @@ public class DebugCallableTest {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         ExecutorService executorService = Executors.newCachedThreadPool();
-
+        // 测试匿名内部类   代码断点逻辑
+        // 必须在匿名内部类的实现方法中打上断点才可以进入代码逻辑
         Future<String> future2 = executorService.submit(new Runnable() {
             @Override
             public void run() {
