@@ -8,6 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author: hangshuo
  * @date: 2022/09/08 23:27
  * @Description:
+ * 顺序执行
  */
 
 public class PrintSequence {
