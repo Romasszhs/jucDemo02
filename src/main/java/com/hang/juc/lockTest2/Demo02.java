@@ -26,7 +26,7 @@ public class    Demo02 {
         },"线程C").start();
 
         new Thread(()->{
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 30; i++) {
                     data.decrement();
             }
         },"线程D").start();

@@ -1,4 +1,4 @@
-package com.hang.juc.lockTest2;
+package com.hang.juc.sequence;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
