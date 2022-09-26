@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author: hangshuo
  * @date: 2022/09/08 23:27
  * @Description:
- * 顺序执行
+ * 顺序执行先打印A再打印B再打印C，循环往复，直至第100次输出后停止
  */
 
 public class PrintSequence {
