@@ -4,12 +4,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * LC119寻找最长的连续子串的方法
  * @author: hangshuo
  * @date: 2021/11/28 17:03
  * @Description:
  */
 
-public class lc119 {
+public class lc119最长的连续子串 {
     public static int longestConsecutive(Integer[] nums){
         Set<Integer> set = new HashSet<>();
 

@@ -19,17 +19,17 @@ public class Demo01 {
             }
         },"线程A").start();
 
-//        new Thread(()->{
-//            for (int i = 0; i < 10; i++) {
-//                try {
-//                    data.increment();
-//                    //Thread.sleep(600);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        },"线程B").start();
-//
+        new Thread(()->{
+            for (int i = 0; i < 20; i++) {
+                try {
+                    data.increment();
+                    //Thread.sleep(600);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        },"线程B").start();
+
         new Thread(()->{
             for (int i = 0; i < 10; i++) {
                 try {
@@ -70,12 +70,12 @@ class Data{
         * 本例就是num会出现-1的情况，当越多线程是执行减操作时，负数的绝对值会越来越大
         * */
         //解决办法就是讲竞态条件放在while循环里面,唤醒之后继续判断,此时便不会出现异常了.
-//        if (num>=1){
-//            this.wait();
-//        }
-        while (num>=1){
-            wait(); // 等于 this.wait()
+        if (num>=1){
+            this.wait();
         }
+//        while (num>=1){
+//            wait(); // 等于 this.wait()
+//        }
         num++;
 
         System.out.println(Thread.currentThread().getName()+"\t "+num);

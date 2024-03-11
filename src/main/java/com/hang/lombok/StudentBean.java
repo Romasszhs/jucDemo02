@@ -15,7 +15,8 @@ import javax.validation.constraints.NotNull;
 @Accessors(chain = true)
 @Getter
 @Setter
-@RequiredArgsConstructor(staticName = "of",onConstructor = @__(@Autowired)) // staticName作为外部调用private构造器的方法
+@RequiredArgsConstructor(staticName = "of",onConstructor = @__(@Autowired))
+// staticName作为外部调用private构造器的方法
 @Builder
 @ToString
 public class StudentBean {

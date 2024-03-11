@@ -8,9 +8,9 @@ import java.util.Stack;
  * @Description:
  */
 
-public class 每日一练_2021年10月15日 {
+public class 每日一练_2021年10月15日_获取最终目录 {
     public static void main(String[] args) {
-        System.out.println(simplifyPath("/path/../a/b/../../c"));
+        System.out.println(simplifyPath("/path/ceshimulu/../a/b/../../c"));
     }
 
     public static String simplifyPath(String path) {

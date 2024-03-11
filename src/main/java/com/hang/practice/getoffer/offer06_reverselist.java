@@ -23,7 +23,12 @@ public class offer06_reverselist {
 
 //        System.out.println(reverse(head1));
 
-        System.out.println(reverse2(head1));
+//        System.out.println(reverse2(head1));
+
+//        System.out.println(reverse3(head1));
+
+        System.out.println(reverse4(head1));
+
     }
     // 方式一
     public static ListNode reverse(ListNode root){
@@ -49,6 +54,35 @@ public class offer06_reverselist {
         }
 
         return prev;
+    }
+
+    // 方法三
+    public static ListNode reverse3(ListNode head){
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode next = null;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+
+        }
+        return prev;
+    }
+
+    public static ListNode reverse4(ListNode root){
+        if (root.getNext() == null){
+            return root;
+        }
+
+        ListNode newlist = reverse4(root.getNext());
+        root.next.next = root;
+        root.next = null;
+
+        return newlist;
+
     }
 
     

@@ -15,7 +15,7 @@ import java.util.Stack;
  * @Description:
  */
 
-public class 每日一练_2021年10月16日 {
+public class 每日一练_2021年10月16日_遍历树的方式 {
     @Test
     public void binaryTreeInorderTraversalTest() {
         Integer arr[] = { 1, 2, 3, 4, 5, 6 };
@@ -44,7 +44,7 @@ public class 每日一练_2021年10月16日 {
 //            inorderHelper(inorderList, root.right);
 //        }
 //    }
-
+    // 前序遍历
     public List<Integer> inorderTraversal2(TreeNode root) {
         if (root == null) {
             return new ArrayList<>();

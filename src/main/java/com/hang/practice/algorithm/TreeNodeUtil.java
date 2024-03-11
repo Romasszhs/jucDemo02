@@ -45,18 +45,22 @@ public class TreeNodeUtil {
         queue.add(root);
         boolean isLeft = true;
         for(int i = 1; i < array.length; i++){
+            // 获取查看队头元素，不出队
             TreeNode node = queue.peek();
             if(isLeft){
                 if(array[i] != null){
                     node.left = new TreeNode(array[i]);
+                    // 在队尾加元素
                     queue.offer(node.left);
                 }
                 isLeft = false;
             }else {
                 if(array[i] != null){
                     node.right = new TreeNode(array[i]);
+                    // 在队尾加元素
                     queue.offer(node.right);
                 }
+                // 移除队头元素
                 queue.poll();
                 isLeft = true;
             }
